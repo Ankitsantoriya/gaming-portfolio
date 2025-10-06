@@ -189,30 +189,32 @@ body{
     transform: translateY(-3px);
 
 }
-@media (max-width:768px){
-    .hero{
-        flex-direction: column;
-        text-align: center;
-        padding-top: 8rem;
-    }
-    .hero-content{
-        padding-right: 0;
-        margin-bottom: 3rem;
-    }
-    .hero-image img{
-        width: 280px;
-        height: 280px;
-    }
-    .nav-links{
-        display: none;
-    }
-    .logo{
-        font-size: 1.5rem;
-        padding-left: 2rem;
-    }
-}
-
+/* responsive design */
+/* Mobile & tablet responsive */
 @media (max-width: 1024px) {
+    /* Navbar full width + padding adjust */
+    .navbar {
+        width: 100%;
+        padding: 1rem 5%;
+        flex-wrap: wrap;
+    }
+    .logo {
+        font-size: 1.6rem;
+    }
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    /* Hero section */
+    .hero {
+        flex-direction: column;
+        padding: 10% 5%;
+        gap: 2rem;
+    }
+    .hero-content {
+        padding: 0;
+        text-align: center;
+    }
     .hero h1 {
         font-size: 3rem;
     }
@@ -223,11 +225,30 @@ body{
         width: 300px;
         height: 300px;
     }
+
+    /* Skills section: 1 card per row */
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .skills-card {
+        padding: 1.5rem;
+    }
+    .skills-card i {
+        font-size: 2rem;
+    }
+
+    /* Button adjust */
+    #btn {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
+    /* Further scaling for smaller screens */
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
     }
     .hero p {
         font-size: 0.95rem;
@@ -236,8 +257,11 @@ body{
         width: 220px;
         height: 220px;
     }
-    .hero {
-        padding: 20% 2%;
-        gap: 1.5rem; 
+    .logo {
+        font-size: 1.4rem;
+    }
+    #btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
     }
 }
