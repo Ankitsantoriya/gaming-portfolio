@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'segoe UI',sans-serif;
+}
+:root{
+    --dark-big: #0a0a0a;
+    --darker-big:#050505;
+    --accent:#2ecc71; 
+    --acent-glow: rgba(46,204,113,0.4);
+    --text:#ffffff;
+}
+body{
+    background-color: var(--dark-big);
+    color: var(--text);
+    line-height: 2;
+    overflow-x: hidden;
+}
+/* navbar section */
+.navbar{
+    position: fixed ;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 10,0.96);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255,0.1);
+}
+.logo{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    position: relative;
+    padding-left: 2.5rem;
+}
+.nav-links{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-links a{
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.nav-links a::after{
+    content:'';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after{
+    width: 100%;
+}
+
+/* hero section */
+.achive{
+    padding: 1rem 5%;
+    background: var(--darker-big);
+}
+.achive-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+}
+.achive-card{
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+}
+
+.achive h2 {
+    background: linear-gradient(45deg,var(--accent)30%, #ffffff 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.achive-card:hover{
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--acent-glow);
+}
+
+
+/* footer section */
+.footer-section{
+    background: var(--darker-big);
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.social-links{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.social-links a{
+    color: var(--text);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+.social-links a:hover{
+    color: var(--accent);
+    transform: translateY(-3px);
+
+}
+/* responsive design */
+@media (max-width: 768px) {
+    .achive-container {
+        grid-template-columns: 1fr; /* 1 card per row (mobile) */
+        gap: 1rem;
+    }
+    .achive h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .achive-card {
+        padding: 1.2rem;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+}
+

@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'segoe UI',sans-serif;
+}
+:root{
+    --dark-big: #0a0a0a;
+    --darker-big:#050505;
+    --accent:#2ecc71; 
+    --acent-glow: rgba(46,204,113,0.4);
+    --text:#ffffff;
+}
+body{
+    background-color: var(--dark-big);
+    color: var(--text);
+    line-height: 2;
+    overflow-x: hidden;
+}
+/* navbar section */
+.navbar{
+    position: fixed ;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 10,0.96);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255,0.1);
+}
+.logo{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    position: relative;
+    padding-left: 2.5rem;
+}
+.nav-links{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-links a{
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.nav-links a::after{
+    content:'';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after{
+    width: 100%;
+}
+/* hero section */
+main{
+    padding-top: 4rem;
+}
+.contact-section {
+    padding: 4rem 5%;
+    background: var(--darker-big);
+    color: var(--text);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: center;
+}
+.contact-info h1 {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 2rem;
+}
+
+.info-box {
+    margin-bottom: 1.5rem;
+}
+
+.info-box h3 {
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+}
+
+/* Right side form */
+.contact-form {
+    background: rgba(255,255,255,0.05);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 20px rgba(46,204,113,0.1);
+    backdrop-filter: blur(6px);
+}
+
+.contact-form h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: var(--text);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--acent-glow);
+}
+
+.send-btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #25a65b;
+    box-shadow: 0 0 15px var(--acent-glow);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-container {
+    grid-template-columns: 1fr;
+    }
+}
+
+
+/* footer section */
+.footer-section{
+    background: var(--darker-big);
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.social-links{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.social-links a{
+    color: var(--text);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+.social-links a:hover{
+    color: var(--accent);
+    transform: translateY(-3px);
+
+}
+/* responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 5%;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+    .contact-info h1 {
+        font-size: 1.5rem;
+    }
+    .contact-form {
+        padding: 1.5rem;
+    }
+    .send-btn {
+        font-size: 1rem;
+    }
+}
